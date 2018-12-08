@@ -1,0 +1,198 @@
+this is how you pull data from sql --> https://www.w3schools.com/js/js_ajax_database.asp
+and this is how you sort the data in a table --> https://kryogenix.org/code/browser/sorttable/
+
+<!DOCTYPE html>
+<html>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+<body>
+
+<h2>The XMLHttpRequest Object</h2>
+
+<form action=""> 
+  <select name="customers" onchange="showCustomer(this.value)">
+    <option value="">Select a customer:</option>
+    <option value="ALFKI">Alfreds Futterkiste</option>
+    <option value="NORTS ">North/South</option>
+    <option value="WOLZA">Wolski Zajazd</option>
+  </select>
+</form>
+<br>
+<div id="txtHint">Customer info will be listed here...</div>
+
+<script>
+function showCustomer(str) {
+  var xhttp;  
+  if (str == "") {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  }
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("txtHint").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "getcustomer.asp?q="+str, true);
+  xhttp.send();
+}
+</script>
+</body>
+</html>
+
+ESPN API
+
+pt1 --> https://stmorse.github.io/journal/espn-fantasy-python.html
+pt2 --> https://stmorse.github.io/journal/espn-fantasy-2-python.html
+pt3 --> https://stmorse.github.io/journal/espn-fantasy-3-python.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+========================================================================
+
+
+
+
+
+
+
+
+This is what my seach has to look like 
+
+
+
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_filterd
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+#myInput {
+    border-box: box-sizing;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+#myInput:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+</style>
+</head>
+<body>
+
+<h2>Search/Filter Dropdown</h2>
+<p>Click on the button to open the dropdown menu, and use the input field to search for a specific dropdown link.</p>
+
+<div class="dropdown">
+<button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+    <a href="#about">About</a>
+    <a href="#base">Base</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+    <a href="#custom">Custom</a>
+    <a href="#support">Support</a>
+    <a href="#tools">Tools</a>
+  </div>
+</div>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } else {
+            a[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</body>
+</html>
+
+
